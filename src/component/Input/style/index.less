@@ -1,0 +1,52 @@
+@import '../../../theme.less';
+@placeholder-color: #bfbfbf;
+.fox-input {
+  width: 100%;
+  height: 32px;
+  margin: 0;
+  padding: 4px 10px;
+  border: none;
+  border-bottom: #bfbfbf 1px solid;
+  outline: 0;
+  list-style: none;
+  position: relative;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.5;
+  background: #fff;
+  transition: all 0.3s;
+  &::placeholder {
+    color: @placeholder-color;
+    opacity: 1;
+  }
+  &-disable {
+    cursor: not-allowed;
+  }
+  &-lg {
+    height: 40px;
+  }
+  &-sm {
+    height: 24px;
+  }
+  &-outline {
+    position: relative;
+    bottom: 1px;
+    background: @theme-color;
+    display: block;
+    transition: width 0.25s;
+    height: 2px;
+    width: 0;
+    margin: auto;
+    &-focus {
+      width: 100%;
+    }
+  }
+  &-wrapper {
+    width: 100%;
+  }
+  &-addon-wrapper {
+    display: flex;
+  }
+  &-fix-wrapper {
+    display: flex;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "allowJs": true,
+    "module": "esNext",
+    "noImplicitAny": true,
+    "target": "es5",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["dom", "es7"]
+  }
+}

@@ -1,0 +1,47 @@
+.line(@index) {
+  @degree: 360 - (@index+1) * 30;
+  @time: @index / 10;
+  transform: rotate(unit(@degree, deg)) translate(0, -34px);
+  animation-delay:~'-@{time}s';
+}
+
+.generate-lines(@n, @i: 0) when (@i <=@n) {
+  .fox-spin>div:nth-child(@{i}) {
+    .line(@i);
+  }
+  .generate-lines(@n, (@i + 1));
+}
+
+.generate-lines(12);
+@keyframes loading {
+  from {
+    opacity: 1;
+    width: 5px;
+    height: 20px;
+  }
+  to {
+    opacity: 0.25;
+    width: 5px;
+    height: 20px;
+  }
+}
+
+.fox-spin {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  zoom: 0.4;
+  /*通过修改这个值(值的区间为0-1)的大小来设置菊花的大小*/
+}
+
+.fox-spin div {
+  width: 3px;
+  height: 16px;
+  background: #a4a2a4;
+  position: absolute;
+  left: 100%;
+  top: 100%;
+  opacity: 0;
+  animation: loading 1.2s linear infinite;
+}

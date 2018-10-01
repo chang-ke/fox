@@ -1,0 +1,22 @@
+.fox-actionsheet {
+  position: fixed;
+  left: 0;
+  bottom: -100%;
+  background: #fff;
+  transition: all 0.3s;
+  transform: translateZ(0);
+  will-change: bottom;
+  @keyframes active {
+    from {
+      bottom: -100%;
+      opacity: 0;
+    }
+    to {
+      bottom: 0;
+    }
+  }
+  &-active {
+    bottom: 0;
+    animation: active 0.3s;
+  }
+}

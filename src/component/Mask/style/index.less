@@ -1,0 +1,26 @@
+.fox-mask {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  background: rgba(0, 0, 0, 0.65);
+  transition: opacity 0.3s linear, height 0s ease 0.3s;
+  &-open {
+    height: 100%;
+    transition: none;
+    animation: foxMaskFadeIn 0.3s cubic-bezier(0.7, 0.3, 0.1, 1);
+  }
+  &-close {
+    height: 0;
+    opacity: 0;
+  }
+  @keyframes foxMaskFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.3;
+    }
+  }
+}

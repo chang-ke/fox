@@ -1,0 +1,101 @@
+@import '../../Mask/style/index.less';
+.fox-keyboard {
+  position: fixed;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  background: #f7f7f7;
+  border-top: 1px solid #d9d9d9;
+  transform: translateZ(0);
+  will-change: bottom;
+  transition: bottom 0.4s ease-in;
+  &-title {
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  &-input {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 15%;
+      right: 0;
+      width: 1px;
+      height: 70%;
+      background: #d9d9d9;
+    }
+    &:last-child::after {
+      display: none;
+    }
+    &-wrapper {
+      display: flex;
+      height: 2rem;
+      margin: 0 0.5rem;
+      overflow: hidden;
+      background-color: #fff;
+      border: 1px solid #d9d9d9;
+      border-radius: 3px;
+    }
+    &-dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      background: rgba(0, 0, 0, 0.65);
+      border-radius: 50%;
+      margin: auto;
+      margin-top: 15px;
+    }
+  }
+  &-button-wrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  & span {
+    position: relative;
+    line-height: 40px;
+    text-align: center;
+    width: 33.3333%;
+    transition: all 0.3s ease;
+    background: #fff;
+    &:active {
+      background: #d9d9d9;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      background: #d9d9d9;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 100%;
+      background: #d9d9d9;
+    }
+  }
+  &-space {
+    width: 1px;
+    background: #f7f7f7;
+  }
+  @keyframes active {
+    from {
+      bottom: -100%;
+    }
+    to {
+      bottom: 0;
+    }
+  }
+  &-active {
+    bottom: 0;
+    animation: active 0.3s ease-out;
+  }
+}
