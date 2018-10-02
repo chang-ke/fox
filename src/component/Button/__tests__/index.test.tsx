@@ -1,8 +1,13 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, render} from 'enzyme';
 import {Button} from '../..';
 
 describe('render <Button/>', () => {
+  it('renders correctly', () => {
+    const wrapper = render(<Button>render</Button>);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('test button exits', () => {
     const wrapper = shallow(<Button />);
     expect(wrapper.find('button').length).toBe(1);

@@ -1,8 +1,13 @@
 import React from 'react';
-import {shallow} from 'enzyme';
-import Mask from '..';
+import {shallow, render} from 'enzyme';
+import {Mask} from '../..';
 
 describe('render <Mask />', () => {
+  it('renders correctly', () => {
+    const wrapper = render(<Mask />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('test classname', () => {
     const wrapper = shallow(<Mask visible={true} />);
     expect(wrapper.hasClass('fox-mask')).toBe(true);
@@ -19,8 +24,7 @@ describe('render <Mask />', () => {
   });
 
   it('test visible with undefined', () => {
-    const wrapper = shallow(<Mask visible={true} />);
-    wrapper.setProps({visible: undefined});
+    const wrapper = shallow(<Mask visible={undefined} />);
     expect(wrapper.state('visible')).toBe(true);
   });
 

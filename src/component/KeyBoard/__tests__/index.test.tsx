@@ -1,8 +1,13 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme';
+import {shallow, mount, render} from 'enzyme';
 import {KeyBoard} from '../..';
 
 describe('render <KeyBoard/>', () => {
+  it('renders correctly', () => {
+    const wrapper = render(<KeyBoard />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('test render div with classnamed .fox-keyboard-input', () => {
     const wrapper = shallow(<KeyBoard count={6} />);
     expect(wrapper.find('.fox-keyboard-input').length).toBe(6);

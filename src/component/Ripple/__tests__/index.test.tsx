@@ -1,8 +1,13 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme';
+import {shallow, render, mount} from 'enzyme';
 import {Ripple} from '../..';
 
 describe('render <Ripple/>', () => {
+  it('renders correctly', () => {
+    const wrapper = render(<Ripple />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('test classname exits', () => {
     const wrapper = mount(
       <div>

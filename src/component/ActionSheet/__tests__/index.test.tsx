@@ -1,8 +1,13 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, render} from 'enzyme';
 import {ActionSheet} from '../..';
 
 describe('render <ActionSheet/>', () => {
+  it('renders correctly', () => {
+    const wrapper = render(<ActionSheet />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('test classname exits', () => {
     const wrapper = shallow(<ActionSheet />);
     expect(wrapper.find('.fox-actionsheet').length).toBe(1);

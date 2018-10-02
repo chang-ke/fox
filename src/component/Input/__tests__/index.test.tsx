@@ -1,8 +1,13 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme';
+import {shallow, mount, render} from 'enzyme';
 import {Input} from '../..';
 
 describe('render <Input/>', () => {
+  it('renders correctly', () => {
+    const wrapper = render(<Input />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('test classname exits', () => {
     const wrapper = shallow(<Input />);
     expect(
@@ -56,12 +61,13 @@ describe('render <Input/>', () => {
   });
 
   it('test focus', () => {
-    const wrapper = shallow(<Input />);
+    const Focus = jest.fn();
+    const wrapper = shallow(<Input onFocus={Focus} />);
     wrapper
       .find('input')
       .at(0)
       .simulate('focus');
-    expect(wrapper.state('focus')).toBe(true);
+    expect(Focus).toBeCalled();
   });
 
   it('test blur', () => {
