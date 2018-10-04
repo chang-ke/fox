@@ -35,7 +35,7 @@ const Router = () => {
       <Switch>
         <Route exact path="/" component={Nav} />
         {paths.map(path => {
-          return <Route key={path} exact path={path} component={dynamic(() => import(`./component${path}/demo`))} />;
+          return <Route key={path} exact path={path} component={dynamic(() => import(`./components${path}/demo`))} />;
         })}
       </Switch>
     </BrowserRouter>
