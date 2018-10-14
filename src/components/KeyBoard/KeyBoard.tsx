@@ -67,8 +67,8 @@ class KeyBoard extends React.Component<KeyBoardProps, KeyBoardState> {
     this.state = {password: [], active: false};
     if (props.random) {
       this.numbers.sort(() => Math.random() - 0.5);
-      this.numbers.push('.', 0);
     }
+    this.numbers.push('.', 0);
   }
 
   classname = (field?: Object) => {
@@ -83,9 +83,7 @@ class KeyBoard extends React.Component<KeyBoardProps, KeyBoardState> {
     for (let i = 0; i < count; ++i) {
       dots.push(
         <div className="fox-kb-dot" key={i}>
-          {i < password.length && (
-            <div className="fox-kb-dot-dot" key={'dot' + i} />
-          )}
+          {i < password.length && <div key={'dot' + i} />}
         </div>
       );
     }

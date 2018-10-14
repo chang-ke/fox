@@ -10,7 +10,7 @@ describe('render <KeyBoard/>', () => {
 
   it('test render div with classnamed .fox-kb-input', () => {
     const wrapper = shallow(<KeyBoard count={6} />);
-    expect(wrapper.find('.fox-kb-input').length).toBe(6);
+    expect(wrapper.find('.fox-kb-dot').length).toBe(6);
   });
 
   it('test render props with active', () => {
@@ -39,7 +39,7 @@ describe('render <KeyBoard/>', () => {
 
     for (let i = 0; i < 5; ++i) {
       wrapper
-        .find('.fox-kb-button-wrapper')
+        .find('.fox-kb-left')
         .childAt(0)
         .simulate('click');
       wrapper.instance().setState({password: Array(i).fill(0)});
@@ -54,16 +54,11 @@ describe('render <KeyBoard/>', () => {
       count: 4,
     };
     const wrapper = mount(<KeyBoard {...props} />);
+    console.log(wrapper.find('.fox-kb-left').children().length);
     wrapper
-      .find('.fox-kb-button-wrapper')
-      .childAt(9)
-      .simulate('click', {
-        target: {
-          textContent: '取消',
-        },
-        currentTarget: {},
-      });
-
+      .find('.fox-kb-left')
+      .childAt(11)
+      .simulate('click');
     expect(props.onClose).toBeCalled();
   });
 
@@ -74,13 +69,8 @@ describe('render <KeyBoard/>', () => {
     };
     const wrapper = mount(<KeyBoard {...props} />);
     wrapper
-      .find('.fox-kb-button-wrapper')
-      .childAt(11)
-      .simulate('click', {
-        target: {
-          textContent: '删除',
-        },
-        currentTarget: {},
-      });
+      .find('.fox-kb-right')
+      .childAt(0)
+      .simulate('click');
   });
 });
