@@ -1,6 +1,6 @@
 import React from 'react';
 import Input from '../../Input';
-import KeyBoard from '..';
+import Keyboard from '..';
 import '../style';
 import '../../Input/style';
 
@@ -11,7 +11,7 @@ class Demo extends React.Component {
       <React.Fragment>
         <Input onFocus={() => this.setState({focus: true})} />
         <div style={{margin: 20}}>
-          <KeyBoard
+          <Keyboard
             count={6}
             random
             active={this.state.focus}

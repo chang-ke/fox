@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import classnames from 'classnames';
 import Mask from '../Mask';
 
-export interface KeyBoardProps {
+export interface KeyboardProps {
   // 是否激活键盘
   active: boolean;
   // 标题
@@ -20,12 +20,12 @@ export interface KeyBoardProps {
   random?: boolean;
 }
 
-export interface KeyBoardState {
+export interface KeyboardState {
   password: Array<number>;
   active: boolean;
 }
 
-class KeyBoard extends React.Component<KeyBoardProps, KeyBoardState> {
+class Keyboard extends React.Component<KeyboardProps, KeyboardState> {
   static propTypes = {
     // 是否激活键盘
     active: propTypes.bool,
@@ -50,8 +50,8 @@ class KeyBoard extends React.Component<KeyBoardProps, KeyBoardState> {
   };
 
   static getDerivedStateFromProps(
-    {active}: KeyBoardProps,
-    nextState: KeyBoardState
+    {active}: KeyboardProps,
+    nextState: KeyboardState
   ) {
     const state = {...nextState};
     if (active !== nextState.active) state.active = active;
@@ -62,7 +62,7 @@ class KeyBoard extends React.Component<KeyBoardProps, KeyBoardState> {
 
   private numbers: Array<number | string> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  constructor(props: KeyBoardProps) {
+  constructor(props: KeyboardProps) {
     super(props);
     this.state = {password: [], active: false};
     if (props.random) {
@@ -163,4 +163,4 @@ class KeyBoard extends React.Component<KeyBoardProps, KeyBoardState> {
   }
 }
 
-export default KeyBoard;
+export default Keyboard;

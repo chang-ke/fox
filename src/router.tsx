@@ -6,11 +6,11 @@ const paths = [
   '/Input',
   '/Button',
   '/Ripple',
-  '/KeyBoard',
+  '/Keyboard',
   '/ActionSheet',
   '/Drawer',
   '/Mask',
-  '/CheckBox',
+  '/Checkbox',
   '/Icon',
   '/Spin',
 ];

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render <KeyBoard/> renders correctly 1`] = `
+exports[`render <Keyboard/> renders correctly 1`] = `
 initialize {
   "0": Object {
     "attribs": Object {
