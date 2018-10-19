@@ -1,6 +1,6 @@
 {
   "name": "fox",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "dependencies": {
     "classnames": "^2.2.6",
     "prop-types": "^15.6.2",
@@ -9,8 +9,12 @@
     "react-router-dom": "^4.3.1"
   },
   "scripts": {
+    "start": "bisheng start -c ./site/bisheng.config.js",
     "dev": "webpack-dev-server --mode development --hot --color",
-    "test": "cross-env NODE_ENV=test jest --config .jest.js"
+    "test": "cross-env NODE_ENV=test jest --config .jest.js",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+    "lint:fix": "npm run lint -- --fix",
+    "ci": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "pre-commit": [
     "test"
@@ -37,8 +41,11 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "bisheng": "^0.28.0",
+    "bisheng-plugin-react": "^0.6.3",
     "clean-webpack-plugin": "^0.1.18",
     "copy-webpack-plugin": "^4.5.2",
+    "coveralls": "^3.0.2",
     "cross-env": "^5.1.4",
     "css-loader": "^0.28.9",
     "enzyme": "^3.5.0",
@@ -52,6 +59,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.0",
     "postcss-loader": "^2.1.6",
     "pre-commit": "^1.2.2",
+    "react-document-title": "^2.0.3",
     "react-hot-loader": "^4.3.5",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.20.1",
