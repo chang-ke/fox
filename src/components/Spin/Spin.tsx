@@ -6,8 +6,8 @@ class Spin extends React.PureComponent {
       <div className="fox-spin">
         {Array(12)
           .fill(0)
-          .map(() => (
-            <div />
+          .map((_, i) => (
+            <div key={i} />
           ))}
       </div>
     );

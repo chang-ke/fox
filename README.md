@@ -1,5 +1,6 @@
 # fox
 
+![](https://travis-ci.org/xuan45/fox.svg?branch=master)
 A react UI library developed by typescript
 
 单元测试使用 enzyme + jest / ts-jest
