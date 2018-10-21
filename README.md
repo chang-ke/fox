@@ -1,6 +1,9 @@
 # fox
 
+<div style="font-size: 80px; text-align: center">🦊</div>
+
 ![](https://travis-ci.org/xuan45/fox.svg?branch=master)
+
 A react UI library developed by typescript
 
 单元测试使用 enzyme + jest / ts-jest
