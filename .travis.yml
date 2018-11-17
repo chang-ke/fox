@@ -2,5 +2,5 @@ language: node_js
 node_js:
   - '8'
   - '9'
-script: 'npm install && npm install --save-dev && npm run test'
+script: 'npm install && npm install --save-dev && npm run test:update'
 after_script: 'npm run ci'
