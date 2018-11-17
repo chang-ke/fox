@@ -1,7 +1,8 @@
 {
   "name": "fox",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "dependencies": {
+    "bisheng-plugin-toc": "^0.4.4",
     "classnames": "^2.2.6",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
@@ -12,9 +13,10 @@
     "start": "bisheng start -c ./site/bisheng.config.js",
     "dev": "webpack-dev-server --mode development --hot --color",
     "test": "cross-env NODE_ENV=test jest --config .jest.js",
+    "test:update": "cross-env NODE_ENV=test jest --config .jest.js --updateSnapshot",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "lint:fix": "npm run lint -- --fix",
-    "ci": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "ci": "cat ./tests/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "pre-commit": [
     "test"

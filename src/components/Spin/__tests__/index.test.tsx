@@ -8,8 +8,13 @@ describe('render <Spin/>', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('test wapper classname exits', () => {
+    const wrapper = shallow(<Spin />);
+    expect(wrapper.hasClass('fox-spin-wapper')).toBe(true);
+  });
+
   it('test classname exits', () => {
     const wrapper = shallow(<Spin />);
-    expect(wrapper.hasClass('fox-spin')).toBe(true);
+    expect(wrapper.childAt(0).hasClass('fox-spin')).toBe(true);
   });
 });

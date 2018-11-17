@@ -1,5 +1,4 @@
 @import "../../../theme.less";
-
 .line(@index) {
   @degree: 360 - (@index+1) * 30;
   @time: @index / 10;
@@ -15,7 +14,7 @@
 }
 
 .generate-lines(12);
-@keyframes loading {
+@keyframes loadingLine {
   from {
     opacity: 1;
     width: 5px;
@@ -25,6 +24,19 @@
     opacity: 0.25;
     width: 5px;
     height: 20px;
+  }
+}
+
+@keyframes loadingCircle {
+  from {
+    opacity: 1;
+    width: 16px;
+    border-radius: 50%;
+  }
+  to {
+    opacity: 0.25;
+    width: 16px;
+    border-radius: 50%;
   }
 }
 
@@ -45,5 +57,30 @@
   left: 100%;
   top: 100%;
   opacity: 0;
-  animation: loading 1.2s linear infinite;
+  animation: loadingLine 1.2s linear infinite;
+}
+
+.fox-spin-snake {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px #bbb solid;
+  clip: rect(0, 50px, 25px, 25px);
+  animation: loadingRotate 1s linear infinite;
+}
+
+@keyframes loadingRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fox-spin-circle-bound > div{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 5px;
+  background: @theme-color;
 }
