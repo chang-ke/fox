@@ -40,7 +40,7 @@
       border: 1px solid #d9d9d9;
       border-radius: 3px;
     }
-    & > div {
+    &>div {
       width: 0.5rem;
       height: 0.5rem;
       background: rgba(0, 0, 0, 0.65);
@@ -93,7 +93,7 @@
     display: flex;
     flex-direction: column;
     width: 25%;
-    & > span {
+    &>span {
       width: 100%;
       line-height: 120px;
     }
@@ -102,16 +102,13 @@
     width: 1px;
     background: #f7f7f7;
   }
+  &-active {
+    bottom: 0;
+    animation: active 0.3s ease-out;
+  }
   @keyframes active {
     from {
       bottom: -100%;
     }
-    to {
-      bottom: 0;
-    }
-  }
-  &-active {
-    bottom: 0;
-    animation: active 0.3s ease-out;
   }
 }

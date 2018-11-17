@@ -1,6 +1,7 @@
 import * as React from 'react';
 import propTypes from 'prop-types';
 import classnames from 'classnames';
+import Icon from '../Icon';
 import Mask from '../Mask';
 
 export interface KeyboardProps {
@@ -9,9 +10,9 @@ export interface KeyboardProps {
   // 标题
   title?: string;
   // 点击关闭按钮时触发
-  onClose?: Function;
+  onClose?: () => void;
   // 输入完成时触发
-  onFinish?: Function;
+  onFinish?: (password: Array<number | string>) => void;
   // 密码位数
   count?: number;
   // 类名
@@ -150,7 +151,7 @@ class Keyboard extends React.Component<KeyboardProps, KeyboardState> {
             <div className="fox-kb-left"> {this.renderNumberSpan()}</div>
             <div className="fox-kb-right">
               <span onClick={this.handleDelete} key="delete">
-                删除
+                <Icon type="delete" />
               </span>
               <span onClick={this.handleDelete} key="confirm">
                 确定

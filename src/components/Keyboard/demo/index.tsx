@@ -2,6 +2,7 @@ import React from 'react';
 import Input from '../../Input';
 import Keyboard from '..';
 import '../style';
+import '../../Icon/style';
 import '../../Input/style';
 
 class Demo extends React.Component {
@@ -16,7 +17,7 @@ class Demo extends React.Component {
             random
             active={this.state.focus}
             onClose={() => this.setState({focus: false})}
-            onFinish={(values: number) => {
+            onFinish={(values: Array<any>) => {
               console.log(values);
             }}
             title="请输入密码"
