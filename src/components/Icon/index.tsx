@@ -1,8 +1,8 @@
 import React from 'react';
 
-interface IconProps {
+export interface IconProps {
   type?: string;
-  onClick?: Function;
+  onClick?: (e: React.MouseEvent) => void;
 }
 
 class Icon extends React.PureComponent<IconProps, {}> {
