@@ -1,14 +1,19 @@
-# fox
+<h1 align="center">fox</h1>
 
-<div style="font-size: 80px; text-align: center">🦊</div><br/>>
+<h1 align="center">🦊</h1><br/>
 
-![](https://travis-ci.org/xuan45/fox.svg?branch=master)
+<div align="center" >
+
+![TravisCi](https://travis-ci.org/xuan45/fox.svg?branch=master)
+![Coverage Status](https://coveralls.io/repos/github/xuan45/fox/badge.svg?branch=master)
+
+</div>
 
 A react UI library developed by typescript
 
 单元测试使用 enzyme + jest / ts-jest
 
-如何使用？
+如何使用?
 
 ```bash
 git clone git@github.com:xuan45/fox.git
